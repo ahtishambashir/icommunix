@@ -14,6 +14,7 @@ export type ChartOptions = {
   responsive: ApexResponsive[];
   labels: any;
   colors: any;
+  legend: any;
 };
 
 @Component({
@@ -32,14 +33,19 @@ export class MainContentComponent {
       width: '100%',
       type: 'pie',
     },
+    legend: {
+      position: 'bottom',
+    },
     colors: ['#16BB7B', '#16BB7B', '#F9C545', '#FE8B56', '#037DAA', '#068ABB', '#0097CF', '#52B8DE', '#4FECB0', '#23D691'],
     labels: ['Credit Card Info', 'Web Login Issue', 'Debit Card Info', 'Debit Card PIN Change', 'Credit Card Blocking', 'Mobile Application Issues', 'Change Credit Card PIN', 'Information', 'Credit Card Bill Payment'],
     responsive: [
       {
-        breakpoint: 480,
+        
+        breakpoint: 576,
         options: {
           chart: {
-            width: 200,
+            width: "100%",
+            height: "400px"
           },
           legend: {
             position: 'bottom',

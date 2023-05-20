@@ -248,3 +248,33 @@
 .border-right-blue {
   border-right: 2px solid #0097cf;
 }
+
+@media (max-width: 1300px) {
+  .stats-wrapper {
+    flex-wrap: wrap;
+  }
+  .stats-card,
+  .stats-card-last {
+    flex-basis: calc(50% - 15px);
+  }
+}
+@media (max-width: 992px) {
+  .stats-card,
+  .stats-card-last {
+    flex-basis: calc(100% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .user-guid-msg {
+    bottom: 3px;
+    margin-bottom: 0px;
+  }
+  .heading {
+    margin-bottom: 0px;
+  }
+
+  .value-msg {
+    padding-bottom: 15px;
+  }
+}

@@ -6,6 +6,7 @@
   top: 70px;
   left: 0px;
   overflow-y: auto;
+  z-index: 99;
 }
 .sidebar-nav {
   display: flex;
@@ -52,4 +53,10 @@
 }
 .sidebar-nav ul li a:hover {
   color: #fff;
+}
+
+@media (max-width: 767px) {
+  .sidebar-nav ul:first-child {
+    margin-bottom: 15px;
+  }
 }

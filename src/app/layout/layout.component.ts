@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
+  sidebarActive = false;
+  mainContentClosed = false;
 
+  toggleSidebar() {
+    this.sidebarActive = !this.sidebarActive;
+  }
+
+  toggleMainContent() {
+    this.mainContentClosed = !this.mainContentClosed;
+  }
+
+  closeSidebar() {
+    this.sidebarActive = false;
+  }
 }

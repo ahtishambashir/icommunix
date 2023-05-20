@@ -147,3 +147,14 @@ table {
   border-radius: 10px;
   background-color: rgba(162, 161, 161, 0.5);
 }
+
+@media (max-width: 767px) {
+  .aside {
+    left: -150px !important;
+    transition: all 0.3s ease-in-out;
+  }
+  .sidebar-container.active .aside {
+    left: 0 !important;
+    transition: all 0.3s ease-in-out;
+  }
+}

@@ -1,10 +1,32 @@
 <main>
-  <app-header></app-header>
+  <app-header> </app-header>
   <div class="main-content">
-    <div class="sidebar-container">
+    <div class="sidebar-container" [class.active]="sidebarActive">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="main-content-container">
+    <div
+      class="main-content-container"
+      [class.closed]="mainContentClosed"
+      (click)="toggleMainContent()"
+    >
+      <div class="text-end">
+        <button (click)="toggleSidebar()" class="d-md-none toggle-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
+
       <app-main-content></app-main-content>
     </div>
   </div>
