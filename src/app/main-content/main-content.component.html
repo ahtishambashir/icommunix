@@ -1,1 +1,119 @@
-<p>main-content works!</p>
+<section class="dashboard">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h2 class="heading">Dashboard</h2>
+    </div>
+    <div>
+      <button class="refresh-btn">
+        <span> Refresh Dashboard </span>
+        <span>
+          <img [src]="refreshIconUrl" alt="" />
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="stats-wrapper">
+    <div class="stats-card position-relative shadow">
+      <div class="stats-header">
+        <div>
+          <h3 class="stats-heading">Topicalization</h3>
+        </div>
+        <div class="stats-action d-flex gap-3 align-items-center">
+          <app-dropdown
+            [options]="topicOptions"
+            [defaultLabel]="'Select option'"
+          ></app-dropdown>
+          <div ngbDropdown class="d-inline-block chart-action-dropdown">
+            <button
+              type="button"
+              class="btn btn-outline-primary chart-action-btn"
+              id="dropdownBasic2"
+              ngbDropdownToggle
+            >
+              <img [src]="dotIconUrl" alt="" />
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button ngbDropdownItem>
+                <img [src]="editIconUrl" alt="" />
+              </button>
+              <button ngbDropdownItem>
+                <img [src]="deleteIconUrl" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div id="chart">
+          <apx-chart
+            *ngIf="chartOptions"
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [labels]="chartOptions.labels"
+            [responsive]="chartOptions.responsive"
+            [colors]="chartOptions.colors"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="stats-card position-relative shadow">
+      <div class="stats-header">
+        <div>
+          <h3 class="stats-heading">Queue SLA</h3>
+        </div>
+        <div class="stats-action d-flex gap-3 align-items-center">
+          <app-dropdown
+            [options]="queueOptions"
+            [defaultLabel]="'Select option'"
+          ></app-dropdown>
+          <div ngbDropdown class="d-inline-block chart-action-dropdown">
+            <button
+              type="button"
+              class="btn btn-outline-primary chart-action-btn"
+              id="dropdownBasic2"
+              ngbDropdownToggle
+            >
+              <img [src]="dotIconUrl" alt="" />
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button ngbDropdownItem>
+                <img [src]="editIconUrl" alt="" />
+              </button>
+              <button ngbDropdownItem>
+                <img [src]="deleteIconUrl" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-card-last position-relative shadow">
+      <div class="stats-header">
+        <div class="stats-heading">
+          <h3>Topicalization</h3>
+        </div>
+        <div class="stats-action">
+          <app-dropdown
+            [options]="topicOptions"
+            [defaultLabel]="'Select option'"
+          ></app-dropdown>
+          <div ngbDropdown class="d-inline-block user-dropdown">
+            <button
+              type="button"
+              class="btn btn-outline-primary dropdown-btn"
+              id="dropdownBasic2"
+              ngbDropdownToggle
+            >
+              <img [src]="dotIconUrl" alt="" />
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

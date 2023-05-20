@@ -7,9 +7,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  imageUrl: SafeResourceUrl;
+  logoImageUrl: SafeResourceUrl;
+  avatarImageUrl: SafeResourceUrl;
+
 
   constructor(private sanitizer: DomSanitizer) {
-    this.imageUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/dummy-logo.png');
+    this.logoImageUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/dummy-logo.png');
+    this.avatarImageUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/images/user-avatar.png');
+
   }
 }

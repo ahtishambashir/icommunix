@@ -1,18 +1,37 @@
-<header>
-  <img [src]="imageUrl" alt="" />
-  <div ngbDropdown class="d-inline-block">
-    <button
-      type="button"
-      class="btn btn-outline-primary"
-      id="dropdownBasic1"
-      ngbDropdownToggle
-    >
-      Toggle dropdown
-    </button>
-    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-      <button ngbDropdownItem>Action - 1</button>
-      <button ngbDropdownItem>Another Action</button>
-      <button ngbDropdownItem>Something else is here</button>
+<header class="header">
+  <a href="">
+    <img [src]="logoImageUrl" alt="" />
+  </a>
+  <div class="user-info d-flex gap-3 align-items-center">
+    <div ngbDropdown class="d-inline-block user-dropdown">
+      <button
+        type="button"
+        class="btn btn-outline-primary dropdown-btn"
+        id="dropdownBasic1"
+        ngbDropdownToggle
+      >
+        Ready
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button>
+      </div>
+    </div>
+    <span class="user-time d-inline-block">03:55</span>
+    <div ngbDropdown class="d-inline-block">
+      <button
+        type="button"
+        class="btn btn-outline-primary avatar-dropdown shadow"
+        id="dropdownBasic2"
+        ngbDropdownToggle
+      >
+        <img [src]="avatarImageUrl" alt="" />
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Profile</button>
+        <button ngbDropdownItem>Log out</button>
+      </div>
     </div>
   </div>
 </header>

@@ -1,0 +1,22 @@
+<div ngbDropdown class="d-inline-block stats-dropdown">
+  <button
+    type="button"
+    class="btn btn-outline-primary stats-dropdown-btn"
+    id="dropdownBasic"
+    ngbDropdownToggle
+  >
+    {{ selectedOption?.label || defaultLabel }}
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+    <button
+      *ngFor="let option of options"
+      ngbDropdownItem
+      (click)="selectOption(option)"
+    >
+      <input type="checkbox" [(ngModel)]="option.checked" />
+      <label [for]="option.label">
+        {{ option.label }}
+      </label>
+    </button>
+  </div>
+</div>

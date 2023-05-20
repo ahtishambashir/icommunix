@@ -1,0 +1,87 @@
+.stats-dropdown .dropdown-menu {
+  width: 100%;
+  min-width: unset;
+  border-radius: 8px;
+  border: 1px solid #0097cf;
+}
+.stats-dropdown .dropdown-menu.show {
+  border-radius: 0px 0px 8px 8px;
+  top: -2px !important;
+}
+.stats-dropdown .stats-dropdown-btn {
+  all: unset;
+  min-width: 120px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  align-items: center;
+  border: 1px solid #0097cf;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0097cf;
+  font-weight: 400;
+}
+.stats-dropdown .stats-dropdown-btn[aria-expanded="true"] {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.stats-dropdown .dropdown-item {
+  all: unset;
+  padding-inline: 5px;
+  cursor: pointer;
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #a2a1a1;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.stats-dropdown .dropdown-item label {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+.stats-dropdown .dropdown-item label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #a2a1a1;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  border-radius: 50%;
+}
+
+.stats-dropdown .dropdown-item input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.stats-dropdown .dropdown-item input[ng-reflect-model="true"] + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: 5.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.stats-dropdown .dropdown-item input[ng-reflect-model="true"] + label::before {
+  background-color: #0097cf;
+  border: none;
+}
+.stats-dropdown .dropdown-item input[ng-reflect-model="true"] + label {
+  color: #0097cf;
+}

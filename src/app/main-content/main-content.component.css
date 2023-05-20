@@ -1,0 +1,67 @@
+.heading {
+  font-size: 16px;
+  color: #323e48;
+  font-weight: 300;
+}
+.refresh-btn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #a2a1a1;
+}
+
+.stats-wrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.stats-card,
+.stats-card-last {
+  border-radius: 10px;
+  padding: 15px;
+}
+.stats-card {
+  flex-basis: calc(40% - 15px);
+}
+.stats-card-last {
+  flex-basis: calc(30% - 15px);
+}
+
+.stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats-header .stats-heading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #037daa;
+}
+
+.chart-action-dropdown .dropdown-menu {
+  min-width: auto;
+  padding: 0px;
+  border: 1px solid rgba(0, 151, 207, 0.5);
+}
+.chart-action-dropdown .dropdown-menu button {
+  all: unset;
+  cursor: pointer;
+  padding: 8px 15px;
+}
+.chart-action-dropdown .dropdown-menu button:first-child {
+  border-bottom: 1px solid rgba(0, 151, 207, 0.5);
+}
+
+.chart-action-dropdown .chart-action-btn {
+  all: unset;
+  cursor: pointer;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.chart-action-dropdown .chart-action-btn::after {
+  content: unset;
+}
