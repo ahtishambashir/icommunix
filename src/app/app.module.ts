@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +12,6 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { LayoutComponent } from './layout/layout.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
