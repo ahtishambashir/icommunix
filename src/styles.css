@@ -133,3 +133,17 @@ table {
   border-spacing: 0;
 }
 /* css reset end  */
+
+.scrollbar::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(162, 161, 161, 0.5);
+}

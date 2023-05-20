@@ -86,55 +86,629 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-7">
-          <div class="progress-wrapper">
-            <p class="progress-label">Pre-Sales</p>
-            <ngb-progressbar
-              [showValue]="true"
-              type="success"
-              class="green-bar"
-              [value]="25"
-            ></ngb-progressbar>
+      <div class="progress-container">
+        <div class="row pt-3 g-0">
+          <div class="col-md-7">
+            <app-progress-bar
+              [label]="'Pre-Sale'"
+              [progress]="50"
+              [bgColor]="'#FE5656'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Cheque Book'"
+              [progress]="50"
+              [bgColor]="'#FE5656'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Pre-Sales'"
+              [progress]="50"
+              [bgColor]="'#FE5656'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Cheque Book'"
+              [progress]="73"
+              [bgColor]="'#F9C545'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Debit Card'"
+              [progress]="75"
+              [bgColor]="'#F9C545'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Debit Card'"
+              [progress]="75"
+              [bgColor]="'#F9C545'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Debit Card'"
+              [progress]="75"
+              [bgColor]="'#F9C545'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Technical'"
+              [progress]="78"
+              [bgColor]="'#F9C545'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Credit Card'"
+              [progress]="84"
+              [bgColor]="'#23D691'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Technical'"
+              [progress]="93"
+              [bgColor]="'#23D691'"
+            ></app-progress-bar>
+            <app-progress-bar
+              [label]="'Credit Card'"
+              [progress]="100"
+              [bgColor]="'#23D691'"
+            ></app-progress-bar>
           </div>
-          <div class="progress-wrapper">
-            <p class="progress-label">Pre-Sales</p>
-            <ngb-progressbar
-              [showValue]="true"
-              type="success"
-              class="green-bar"
-              [value]="25"
-            ></ngb-progressbar>
+          <div class="col-md-5">
+            <div class="d-flex h-100 align-items-center justify-content-center">
+              <div class="rounded-progress">
+                <div class="progress-status">
+                  <div class="progress-percentage">
+                    <h4>Aggregate</h4>
+                    <h5>100%</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <p class="value-msg">All values are in %</p>
+      <p class="user-guid-msg">
+        We can select multiple queues or 1 Routing Profile
+      </p>
     </div>
     <div class="stats-card-last position-relative shadow">
       <div class="stats-header">
-        <div class="stats-heading">
-          <h3>Topicalization</h3>
+        <div>
+          <h3 class="stats-heading">Agent Statistics</h3>
         </div>
-        <div class="stats-action">
-          <app-dropdown
-            [options]="topicOptions"
-            [defaultLabel]="'Select option'"
-          ></app-dropdown>
-          <div ngbDropdown class="d-inline-block user-dropdown">
+        <div class="stats-action d-flex gap-3 align-items-center">
+          <div ngbDropdown class="d-inline-block chart-action-dropdown">
             <button
               type="button"
-              class="btn btn-outline-primary dropdown-btn"
+              class="btn btn-outline-primary chart-action-btn"
               id="dropdownBasic2"
               ngbDropdownToggle
             >
               <img [src]="dotIconUrl" alt="" />
             </button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-              <button ngbDropdownItem>Action - 1</button>
-              <button ngbDropdownItem>Another Action</button>
-              <button ngbDropdownItem>Something else is here</button>
+              <button ngbDropdownItem>
+                <img [src]="editIconUrl" alt="" />
+              </button>
+              <button ngbDropdownItem>
+                <img [src]="deleteIconUrl" alt="" />
+              </button>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="agent-stats-wrapper shadow d-flex justify-content-between align-items-center px-3 py-2 mb-3"
+      >
+        <div class="agents-stats d-flex gap-2 align-items-center">
+          <div>
+            <img [src]="loggedIconUrl" alt="" />
+          </div>
+          <h2 class="yellow">Logged in</h2>
+        </div>
+        <div class="agents-num yellow">12</div>
+      </div>
+      <div
+        class="agent-stats-wrapper shadow d-flex justify-content-between align-items-center px-3 py-2 mb-3"
+      >
+        <div class="agents-stats d-flex gap-2 align-items-center">
+          <div>
+            <img [src]="readyIconUrl" alt="" />
+          </div>
+          <h2 class="green">READY</h2>
+        </div>
+        <div class="agents-num green">6</div>
+      </div>
+      <div
+        class="agent-stats-wrapper shadow d-flex justify-content-between align-items-center px-3 py-2 mb-3"
+      >
+        <div class="agents-stats d-flex gap-2 align-items-center">
+          <div>
+            <img [src]="notReadyIconUrl" alt="" />
+          </div>
+          <h2 class="red">Not READY</h2>
+        </div>
+        <div class="agents-num red">2</div>
+      </div>
+      <div
+        class="agent-stats-wrapper shadow d-flex justify-content-between align-items-center px-3 py-2 mb-3"
+      >
+        <div class="agents-stats d-flex gap-2 align-items-center">
+          <div>
+            <img [src]="busyIconUrl" alt="" />
+          </div>
+          <h2 class="blue">busy</h2>
+        </div>
+        <div class="agents-num blue">23</div>
+      </div>
+      <div
+        class="total-time-stat d-flex justify-content-between align-items-center"
+      >
+        <div class="handle-time">
+          <h4>00:10:53</h4>
+          <h5>Average Handle Time</h5>
+        </div>
+        <div class="time-icon">
+          <img [src]="timeIconUrl" alt="" />
+        </div>
+        <div class="handle-time">
+          <h4>00:02:01</h4>
+          <h5>Average Hold Tim</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="queue-wrapper shadow rounded mt-4 p-3">
+    <div class="queue-header">
+      <div class="stats-header">
+        <div>
+          <h3 class="stats-heading">Queue Statistics</h3>
+        </div>
+        <div class="stats-action d-flex gap-3 align-items-center">
+          <app-dropdown
+            [options]="queueStatsOptions"
+            [defaultLabel]="'Select Queues'"
+          ></app-dropdown>
+          <div ngbDropdown class="d-inline-block chart-action-dropdown">
+            <button
+              type="button"
+              class="btn btn-outline-primary chart-action-btn"
+              id="dropdownBasic2"
+              ngbDropdownToggle
+            >
+              <img [src]="dotIconUrl" alt="" />
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button ngbDropdownItem>
+                <img [src]="editIconUrl" alt="" />
+              </button>
+              <button ngbDropdownItem>
+                <img [src]="deleteIconUrl" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive scrollbar">
+        <table class="queue-table table table-borderless">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Available Agents</th>
+              <th>Agents Not Ready</th>
+              <th>Calls Handled</th>
+              <th>Calls In Queue</th>
+              <th>Calls Abandoned</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="queue-tag"><h2>TECHNICAL</h2></div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="availableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>115</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="notAvailableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>50</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callIconUrl" alt="" />
+                  </span>
+                  <h4>98</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callInQueueIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callDeclinedIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td class="border-right-blue">
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="service-level">
+                  <h4>Service level</h4>
+                  <h5>50%</h5>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="queue-tag"><h2>new bOOKING</h2></div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="availableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>115</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="notAvailableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>50</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callIconUrl" alt="" />
+                  </span>
+                  <h4>98</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callInQueueIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callDeclinedIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td class="border-right-blue">
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="service-level">
+                  <h4>Service level</h4>
+                  <h5>50%</h5>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="queue-tag"><h2>SALES</h2></div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="availableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>115</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="notAvailableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>50</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callIconUrl" alt="" />
+                  </span>
+                  <h4>98</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callInQueueIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callDeclinedIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td class="border-right-blue">
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="service-level">
+                  <h4>Service level</h4>
+                  <h5>50%</h5>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="queue-tag"><h2>SUPPORT</h2></div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="availableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>115</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="notAvailableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>50</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callIconUrl" alt="" />
+                  </span>
+                  <h4>98</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callInQueueIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callDeclinedIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td class="border-right-blue">
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="service-level">
+                  <h4>Service level</h4>
+                  <h5>50%</h5>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="queue-tag"><h2>CREDIT CARD</h2></div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="availableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>115</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="notAvailableAgentIconUrl" alt="" />
+                  </span>
+                  <h4>50</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callIconUrl" alt="" />
+                  </span>
+                  <h4>98</h4>
+                </div>
+              </td>
+              <td align="center">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callInQueueIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td align="center" class="border-right-blue">
+                <div class="call-tag">
+                  <span class="call-icon">
+                    <img [src]="callDeclinedIconUrl" alt="" />
+                  </span>
+                  <h4>12</h4>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td class="border-right-blue">
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:10:53</h4>
+                  <h5>Longest Call in Queue</h5>
+                </div>
+              </td>
+              <td>
+                <img [src]="timeIconUrl" alt="" />
+              </td>
+              <td>
+                <div class="call-time">
+                  <h4>00:02:01</h4>
+                  <h5>Average Wait Time</h5>
+                </div>
+              </td>
+              <td>
+                <div class="service-level">
+                  <h4>Service level</h4>
+                  <h5>50%</h5>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

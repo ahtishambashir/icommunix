@@ -22,6 +22,7 @@
 .stats-card-last {
   border-radius: 10px;
   padding: 15px;
+  /* height: 350px; */
 }
 .stats-card {
   flex-basis: calc(40% - 15px);
@@ -40,6 +41,7 @@
   font-size: 14px;
   font-weight: 500;
   color: #037daa;
+  margin-bottom: 0px;
 }
 
 .chart-action-dropdown .dropdown-menu {
@@ -64,4 +66,185 @@
 }
 .chart-action-dropdown .chart-action-btn::after {
   content: unset;
+}
+
+.value-msg {
+  font-size: 10px;
+  text-align: center;
+  color: #202a33;
+  margin-bottom: 0px;
+}
+
+.user-guid-msg {
+  font-size: 8px;
+  color: #202a33;
+  position: absolute;
+  bottom: -5px;
+  right: 5px;
+}
+.progress-container {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+.agents-stats h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.yellow {
+  color: #f9c545;
+}
+.green {
+  color: #23d691;
+}
+.red {
+  color: #fe5656;
+}
+.blue {
+  color: #0097cf;
+}
+.agents-num {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.handle-time h4 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #202a33;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.handle-time h5 {
+  font-size: 12px;
+  color: #a2a1a1;
+  font-weight: 400;
+  text-align: center;
+}
+.rounded-progress {
+  height: 120px;
+  width: 120px;
+  background-color: transparent;
+  border: 5px solid #e4ebf4;
+  border-radius: 50%;
+  position: relative;
+}
+.progress-status {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 7px solid #fe5656;
+}
+.progress-percentage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.progress-percentage h4 {
+  font-size: 14px;
+  color: #fe5656;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.progress-percentage h5 {
+  font-weight: 30px;
+  text-align: center;
+  font-weight: 300;
+  text-align: center;
+  color: #fe5656;
+  margin-bottom: 0px;
+}
+.table-responsive {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.queue-table {
+  border-collapse: separate;
+  border-spacing: 0em 1em;
+}
+
+.queue-table thead th {
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 500;
+  color: #323e48;
+  padding: 0.5rem 1rem;
+}
+
+.queue-table tbody tr td {
+  vertical-align: middle;
+  padding: 0rem 1rem;
+}
+.queue-table tbody tr:nth-child(odd) {
+  background-color: rgba(230, 230, 230, 0.25);
+}
+
+.queue-tag {
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: #0097cf;
+}
+.queue-tag h2 {
+  margin-bottom: 0px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.call-tag {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(112, 112, 112, 0.5);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.call-tag h4 {
+  margin-bottom: 0px;
+}
+.call-tag .call-icon {
+  margin-left: -25px;
+}
+.call-time h4 {
+  font-size: 20px;
+  color: #202a33;
+  margin-bottom: 7px;
+  text-align: center;
+}
+.call-time h5 {
+  color: #a2a1a1;
+  font-size: 9px;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 0px;
+}
+.service-level h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #202a33;
+  margin-bottom: 7px;
+  white-space: nowrap;
+  text-align: center;
+}
+.service-level h5 {
+  color: #0097cf;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.border-right-blue {
+  border-right: 2px solid #0097cf;
 }
